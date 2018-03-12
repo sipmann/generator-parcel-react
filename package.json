@@ -1,0 +1,23 @@
+{
+  "name": "generator-parcel-react",
+  "version": "1.0.0",
+  "description": "A simple react with parcel generator",
+  "main": "index.js",
+  "author": "Sipmann",
+  "license": "MIT",
+  "keywords": [
+    "yeoman-generator",
+    "react-generator"
+  ],
+  "files": [
+    "generators"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.4",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  }
+}
