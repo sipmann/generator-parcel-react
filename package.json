@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "A simple react with parcel generator",
   "main": "index.js",
-  "author": "Sipmann",
+  "author": {
+    "name": "Maurício Camargo Sipmann",
+    "email": "sipmann@gmail.com",
+    "url": "https://www.sipmann.com"
+  },
+  "repository": "https://github.com/sipmann/generator-parcel-react",
   "license": "MIT",
   "keywords": [
     "yeoman-generator",
