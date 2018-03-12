@@ -10,7 +10,7 @@ beforeEach(function () {
 })
 
 describe('generator-tests', function () {
-    it('generates a project with require.js', function () {
+    it('generates a project with the basic files', function () {
         assert.file(['package.json', '.babelrc', 'index.html', 'src/index.jsx']);
     });
 });
