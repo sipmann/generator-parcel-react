@@ -9,7 +9,14 @@ Just a Yeoman generator to get started with react with parcel.
 
 
 ## Todos
+- [ ] React Router
+- [ ] React-Bootstrap
+- [ ] Material-UI
 
-[] React Router
-[] React-Bootstrap
-[] Material-UI
+## Testing
+
+Just run mocha :)
+
+```shell
+mocha
+```
