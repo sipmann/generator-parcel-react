@@ -41,12 +41,13 @@ module.exports = class extends Generator {
             this.reactRouter = false;
             this.nodeSass = false;
 
-            answers.extras.forEach(el => {
-                if (el === 'React Router')
-                    this.reactRouter = true;
-                else if (el === 'Node sass')
-                    this.nodeSass = true;
-            });
+            if (answers.extras)
+                answers.extras.forEach(el => {
+                    if (el === 'React Router')
+                        this.reactRouter = true;
+                    else if (el === 'Node sass')
+                        this.nodeSass = true;
+                });
         });
     }
 
