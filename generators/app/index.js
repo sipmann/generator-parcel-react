@@ -90,7 +90,7 @@ module.exports = class extends Generator {
             );
 
         this.fs.write('.babelrc', '{\n'+
-            '   "presets": ["env", "react"]\n'+
+            '    "presets": ["env", "react"]\n'+
             '}');
     }
 };
