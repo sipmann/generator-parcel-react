@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+<% if (reactRouter) { %>
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
+<% } %>
+
+<% if (nodeSass) { %>
+import '../css/app.scss';
+<% } %>
+
 class App extends Component {
     render() {
-        return (<div>Hello from generator</div>);
+        return (
+            <% if (reactRouter) { %>
+                <Router>
+                    <div>
+                        <div>
+                            <Link to={'/'}>
+                                Home
+                            </Link>
+                        </div>
+                        <div>
+                            <Route extac={true} path="/" render={() => (
+            <% } %>
+            <div>Hello from generator</div>
+            <% if (reactRouter) { %>
+                    )} />
+                        </div>
+                    </div>
+                </Router>
+            <% } %>
+        );
     }
 }
 
