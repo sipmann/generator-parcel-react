@@ -21,6 +21,7 @@ yo parcel-react
 
 
 ## Todos
+- [ ] Better tests... really
 - [x] React Router
 - [ ] React-Bootstrap
 - [ ] Material-UI
