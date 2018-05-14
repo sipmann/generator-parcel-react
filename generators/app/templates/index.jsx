@@ -21,7 +21,7 @@ class App extends Component {
                             </Link>
                         </div>
                         <div>
-                            <Route extac={true} path="/" render={() => (
+                            <Route exact={true} path="/" render={() => (
             <% } %>
             <div>Hello from generator</div>
             <% if (reactRouter) { %>
