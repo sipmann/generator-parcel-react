@@ -1,6 +1,6 @@
 # Generator Parcel React
 
-Just a Yeoman generator to get started with react with parcel.
+Just a Yeoman generator to get started with ⚛️ react and 📦 parcel.
 
 
 ## Usage
@@ -17,7 +17,7 @@ yo parcel-react
 
 ## Status
 
-[ ![Codeship Status for sipmann/generator-parcel-react](https://app.codeship.com/projects/03a4a380-082e-0136-cdbf-02887c9dcadb/status?branch=master)](https://app.codeship.com/projects/281130)
+[ ![Codeship Status for sipmann/generator-parcel-react](https://app.codeship.com/projects/03a4a380-082e-0136-cdbf-02887c9dcadb/status?branch=master)](https://app.codeship.com/projects/281130) [![dependencies Status](https://david-dm.org/sipmann/generator-parcel-react/status.svg)](https://david-dm.org/sipmann/generator-parcel-react)
 
 
 ## Todos
