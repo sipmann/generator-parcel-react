@@ -7,12 +7,15 @@ describe('generator-tests', function () {
         // The object returned acts like a promise, so return it to wait until the process is done
         return helpers.run(path.join(__dirname, '../generators/app'))
             .withOptions({ appname: 'foo' })    // Mock options passed in
-            .withPrompts({ gituser: 'sipmann' }); // Mock the prompt answers
+            .withPrompts({ gituser: 'sipmann', extras: ['Node sass'] }); // Mock the prompt answers
+    });
+        
+    it('generates a project with the basic files', () => {
+        assert.file(['package.json', '.babelrc', 'index.html', 'src/index.jsx']);
     });
 
-    it('generates a project with react router', function () {
-        assert.file(['package.json', '.babelrc', 'index.html', 'src/index.jsx']);
-        assert.jsonFileContent('package.json', {"name": "foo"});
-        assert.noFileContent('src/index.jsx', '<Router>');
+    it('should have a sass link and deps', () => {
+        assert.jsonFileContent('package.json', {"name": "foo", });
+        assert.fileContent('src/index.jsx', 'app.scss');
     });
 });

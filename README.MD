@@ -21,7 +21,7 @@ yo parcel-react
 
 
 ## Todos
-- [ ] Better tests... really
+- [x] Better tests... really
 - [x] React Router
 - [x] SASS
 - [ ] Redux or another framework like that
