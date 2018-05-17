@@ -2,7 +2,7 @@ const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
-describe('generator-tests', function () {
+describe('generator with router', function () {
     beforeEach(function () {
         // The object returned acts like a promise, so return it to wait until the process is done
         return helpers.run(path.join(__dirname, '../generators/app'))

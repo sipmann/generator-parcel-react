@@ -12,7 +12,8 @@
   "license": "MIT",
   "keywords": [
     "yeoman-generator",
-    "react-generator"
+    "react-generator",
+    "parcel-react-generator"
   ],
   "files": [
     "generators"

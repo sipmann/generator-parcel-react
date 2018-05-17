@@ -2,7 +2,7 @@ const path = require('path');
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 
-describe('generator-tests', function () {
+describe('generator with sass', function () {
     beforeEach(function () {
         // The object returned acts like a promise, so return it to wait until the process is done
         return helpers.run(path.join(__dirname, '../generators/app'))
@@ -15,7 +15,7 @@ describe('generator-tests', function () {
     });
 
     it('should have a sass link and deps', () => {
-        assert.jsonFileContent('package.json', {"name": "foo", });
+        assert.jsonFileContent('package.json', {"name": "foo"});
         assert.fileContent('src/index.jsx', 'app.scss');
     });
 });
