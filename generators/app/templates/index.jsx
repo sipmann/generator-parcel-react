@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-<% if (reactRouter) { %>
-import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
-<% } %>
-
-<% if (nodeSass) { %>
-import '../css/app.scss';
-<% } %>
+<% if (reactRouter) { %>import { BrowserRouter as Router, Link, Route} from 'react-router-dom';<% } %>
+<% if (nodeSass) { %>import '../css/app.scss';<% } %>
 
 class App extends Component {
     render() {
         return (
-            <% if (reactRouter) { %>
-                <Router>
+            <% if (reactRouter) { %><Router>
                     <div>
                         <div>
                             <Link to={'/'}>
@@ -21,15 +14,13 @@ class App extends Component {
                             </Link>
                         </div>
                         <div>
-                            <Route exact={true} path="/" render={() => (
-            <% } %>
+                            <Route exact={true} path="/" render={() => (<% } %>
             <div>Hello from generator</div>
             <% if (reactRouter) { %>
                     )} />
                         </div>
                     </div>
-                </Router>
-            <% } %>
+                </Router><% } %>
         );
     }
 }
