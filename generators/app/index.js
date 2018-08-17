@@ -31,6 +31,9 @@ module.exports = class extends Generator {
                 },
                 {
                     name: 'Node sass'
+                },
+                {
+                    name: 'Typescript'
                 }
             ]
         }])
@@ -47,6 +50,8 @@ module.exports = class extends Generator {
                         this.reactRouter = true;
                     else if (el === 'Node sass')
                         this.nodeSass = true;
+                    else if (el === 'Typescript')
+                        this.typescript = true;
                 });
         });
     }
@@ -67,7 +72,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('index.html'),
             this.destinationPath('index.html'),
-            { appname: this.appname }
+            { appname: this.appname, typescript: this.typescript }
         );
 
         this.fs.copyTpl(
@@ -76,9 +81,18 @@ module.exports = class extends Generator {
             { appname: this.appname, gituser: this.gituser }
         );
 
+        let indexName = 'index.jsx';
+        if (this.typescript) {
+            indexName = 'index.tsx';
+            this.fs.copyTpl(
+                this.templatePath('tsconfig.json'),
+                this.destinationPath('tsconfig.json'), {}
+            );
+        }
+
         this.fs.copyTpl(
-            this.templatePath('index.jsx'),
-            this.destinationPath('src/index.jsx'),
+            this.templatePath(indexName),
+            this.destinationPath(`src/${indexName}`),
             {reactRouter: this.reactRouter, nodeSass: this.nodeSass}
         );
 

@@ -8,6 +8,8 @@
 </head>
 <body>
     <div id="app"></div>
+    <% if (typescript) { %><script src="src/index.tsx"></script><% } else {%>
     <script src="src/index.jsx"></script>
+    <% } %>
 </body>
 </html>
