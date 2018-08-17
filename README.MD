@@ -18,7 +18,7 @@ yo parcel-react
 ## Status
 
 [ ![Codeship Status for sipmann/generator-parcel-react](https://app.codeship.com/projects/03a4a380-082e-0136-cdbf-02887c9dcadb/status?branch=master)](https://app.codeship.com/projects/281130) [![dependencies Status](https://david-dm.org/sipmann/generator-parcel-react/status.svg)](https://david-dm.org/sipmann/generator-parcel-react)
-
+[![Downloads](https://img.shields.io/npm/dm/generator-parcel-react.svg?style=flat)](https://www.npmjs.com/package/generator-parcel-react)
 
 ## Todos
 - [x] Better tests... really
