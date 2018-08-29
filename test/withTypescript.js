@@ -14,8 +14,14 @@ describe('generator with typescript', function () {
         assert.file(['package.json', '.babelrc', 'index.html', 'src/index.tsx']);
     });
 
-    it('should have a sass link and deps', () => {
-        assert.jsonFileContent('package.json', {"name": "foo"});
+    it('should have a ts link and deps', () => {
+        assert.jsonFileContent('package.json', {
+            "name": "foo", 
+            "devDependencies": {
+                "@types/react": /(.*)/,
+                "@types/react-dom": /(.*)/,
+            }
+        });
         assert.noFileContent('src/index.tsx', 'app.scss');
     });
 });

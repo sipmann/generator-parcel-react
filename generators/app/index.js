@@ -65,6 +65,9 @@ module.exports = class extends Generator {
         if (this.nodeSass) {
             this.npmInstall(['node-sass'], { 'dev': true });
         }
+        if (this.typescript) {
+            //this.npmInstall(['@types/react','@types/react-dom'], { 'dev': true });
+        }
         this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react'], { 'dev': true });
     }
 
