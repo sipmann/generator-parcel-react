@@ -43,7 +43,7 @@ module.exports = class extends Generator {
             this.reactRouter = false;
             this.nodeSass = false;
 
-            if (answers.extras)
+            if (answers.extras) {
                 answers.extras.forEach(el => {
                     if (el === 'React Router')
                         this.reactRouter = true;
@@ -52,6 +52,7 @@ module.exports = class extends Generator {
                     else if (el === 'Typescript')
                         this.typescript = true;
                 });
+            }
         });
     }
 
