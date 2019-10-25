@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 class App extends Component {
     render() {
         return (
-            <% if (redux) { %><Provider store={store}> <% } %>
+            <% if (redux) { %><Provider store={Store}> <% } %>
             <% if (reactRouter) { %>    <Router>
                     <div>
                         <div>

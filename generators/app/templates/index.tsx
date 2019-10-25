@@ -1,11 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 <% if (reactRouter) { %>import { BrowserRouter as Router, Link, Route} from 'react-router-dom';<% } %>
+<% if (redux) { %>import { Provider } from 'react-redux'; <% } %>
+
+<% if (redux) { %>import Store from './store';  <% } %>
 <% if (nodeSass) { %>import '../css/app.scss';<% } %>
 
 class App extends React.Component<{}, {}> {
     render() {
         return (
+            <% if (redux) { %><Provider store={Store}> <% } %>
             <% if (reactRouter) { %><Router>
                 <div>
                     <div>
@@ -21,6 +25,7 @@ class App extends React.Component<{}, {}> {
                     </div>
                 </div>
             </Router><% } %>
+            <% if (redux) { %></Provider> <% } %>
         );
     }
 }
