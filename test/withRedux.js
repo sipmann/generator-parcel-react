@@ -13,7 +13,7 @@ describe('generator with redux', function () {
             .withPrompts({ gituser: 'sipmann', extras: ['Redux'] })
             .then(function() {
                 assert.jsonFileContent('package.json', {
-                    "name": "foo",
+                    "name": "foo-redux",
                     "devDependencies": {
                         "react-redux": /(.*)/
                     }

@@ -33,6 +33,9 @@ module.exports = class extends Generator {
                 },
                 {
                     name: 'Typescript'
+                },
+                {
+                    name: 'Redux'
                 }
             ]
         }])
@@ -51,6 +54,8 @@ module.exports = class extends Generator {
                         this.nodeSass = true;
                     else if (el === 'Typescript')
                         this.typescript = true;
+                    else if (el === 'Redux')
+                        this.redux = true;
                 });
             }
         });
@@ -67,6 +72,9 @@ module.exports = class extends Generator {
         }
         if (this.typescript) {
             //this.npmInstall(['@types/react','@types/react-dom'], { 'dev': true });
+        }
+        if (this.redux) {
+            this.npmInstall(['react-redux', 'redux-thunk']);
         }
         this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react'], { 'dev': true });
     }
