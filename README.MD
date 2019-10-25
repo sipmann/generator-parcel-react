@@ -25,7 +25,7 @@ yo parcel-react
 - [x] React Router
 - [x] SASS
 - [x] Typescript
-- [ ] Redux or another framework like that
+- [x] Redux
 
 ## Testing
 

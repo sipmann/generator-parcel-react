@@ -93,8 +93,10 @@ module.exports = class extends Generator {
         );
 
         let indexName = 'index.jsx';
+        let storeName = 'store.jsx';
         if (this.typescript) {
             indexName = 'index.tsx';
+            storeName = 'store.tsx';
             this.fs.copyTpl(
                 this.templatePath('tsconfig.json'),
                 this.destinationPath('tsconfig.json'), {}
@@ -104,14 +106,21 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath(indexName),
             this.destinationPath(`src/${indexName}`),
-            {reactRouter: this.reactRouter, nodeSass: this.nodeSass}
+            {reactRouter: this.reactRouter, nodeSass: this.nodeSass, redux: this.redux}
         );
 
         if (this.nodeSass)
             this.fs.copyTpl(
                 this.templatePath('app.scss'),
                 this.destinationPath('css/app.scss'),
-                {reactRouter: this.reactRouter, nodeSass: this.nodeSass}
+                {reactRouter: this.reactRouter, nodeSass: this.nodeSass, redux: this.redux}
+            );
+        
+        if (this.redux)
+            this.fs.copyTpl(
+                this.templatePath(storeName),
+                this.destinationPath(`src/${storeName}`),
+                {}
             );
 
         this.fs.write('.babelrc', '{\n'+
