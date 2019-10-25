@@ -16,8 +16,7 @@ yo parcel-react
 ```
 
 ## Status
-
-[ ![Codeship Status for sipmann/generator-parcel-react](https://app.codeship.com/projects/03a4a380-082e-0136-cdbf-02887c9dcadb/status?branch=master)](https://app.codeship.com/projects/281130) [![dependencies Status](https://david-dm.org/sipmann/generator-parcel-react/status.svg)](https://david-dm.org/sipmann/generator-parcel-react)
+[![Codeship Status for sipmann/generator-parcel-react](https://app.codeship.com/projects/b98dd970-d8f1-0137-b23d-7a513962b3e1/status?branch=master)](https://app.codeship.com/projects/371133) [![dependencies Status](https://david-dm.org/sipmann/generator-parcel-react/status.svg)](https://david-dm.org/sipmann/generator-parcel-react)
 [![Downloads](https://img.shields.io/npm/dm/generator-parcel-react.svg?style=flat)](https://www.npmjs.com/package/generator-parcel-react)
 [![Coverage Status](https://coveralls.io/repos/github/sipmann/generator-parcel-react/badge.svg?branch=master)](https://coveralls.io/github/sipmann/generator-parcel-react?branch=master)
 
@@ -35,4 +34,3 @@ Just run mocha :)
 ```shell
 mocha
 ```
-.
