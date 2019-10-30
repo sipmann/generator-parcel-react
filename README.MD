@@ -1,6 +1,6 @@
 # Generator Parcel React
 
-Just a Yeoman generator to get started with ⚛️ react and 📦 parcel and typescript (if u want).
+Just a Yeoman generator to get started with ⚛️ react, 📦 parcel, redux and typescript (if u want).
 
 
 ## Usage
@@ -26,6 +26,7 @@ yo parcel-react
 - [x] SASS
 - [x] Typescript
 - [x] Redux
+- [ ] Some kind of linting
 
 ## Testing
 

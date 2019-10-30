@@ -74,9 +74,9 @@ module.exports = class extends Generator {
             //this.npmInstall(['@types/react','@types/react-dom'], { 'dev': true });
         }
         if (this.redux) {
-            this.npmInstall(['react-redux', 'redux-thunk']);
+            this.npmInstall(['redux', 'react-redux', 'redux-thunk']);
         }
-        this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react'], { 'dev': true });
+        this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react', ' babel-plugin-transform-object-rest-spread'], { 'dev': true });
     }
 
     writing() {
@@ -124,6 +124,7 @@ module.exports = class extends Generator {
             );
 
         this.fs.write('.babelrc', '{\n'+
+            '    "plugins": ["transform-object-rest-spread"],\n'+
             '    "presets": ["env", "react"]\n'+
             '}');
     }
