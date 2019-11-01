@@ -76,7 +76,7 @@ module.exports = class extends Generator {
         if (this.redux) {
             this.npmInstall(['redux', 'react-redux', 'redux-thunk']);
         }
-        this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react', ' babel-plugin-transform-object-rest-spread'], { 'dev': true });
+        this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react', 'babel-plugin-transform-object-rest-spread'], { 'dev': true });
     }
 
     writing() {

@@ -1,6 +1,6 @@
 {
   "name": "generator-parcel-react",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "A simple react with parcel generator",
   "main": "index.js",
   "author": {
