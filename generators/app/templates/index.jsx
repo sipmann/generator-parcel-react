@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-<% if (reactRouter) { %>import { BrowserRouter as Router, Link, Route} from 'react-router-dom';<% } %>
+<% if (reactRouter) { %>import { BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';<% } %>
 <% if (redux) { %>import { Provider } from 'react-redux'; <% } %>
 
 <% if (redux) { %>import Store from './store';  <% } %>
@@ -18,10 +18,12 @@ class App extends Component {
                             </Link>
                         </div>
                         <div>
-                            <Route exact={true} path="/" render={() => (<% } %>
+                            <Switch>
+                                <Route exact={true} path="/" render={() => (<% } %>
             <div>Hello from generator</div>
             <% if (reactRouter) { %>
-                            )} />
+                                )} />
+                            </Switch>
                         </div>
                     </div>
                 </Router><% } %>
