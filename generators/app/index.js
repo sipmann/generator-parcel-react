@@ -92,6 +92,12 @@ module.exports = class extends Generator {
             { appname: this.appname, gituser: this.gituser }
         );
 
+        this.fs.copyTpl(
+            this.templatePath('gitignore'),
+            this.destinationPath('.gitignore'),
+            { appname: this.appname, gituser: this.gituser }
+        );
+
         let indexName = 'index.jsx';
         let storeName = 'store.jsx';
         if (this.typescript) {

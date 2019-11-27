@@ -11,7 +11,7 @@ describe('generator without everything', function () {
     });
 
     it('generates a project with react router', () => {
-        assert.file(['package.json', '.babelrc', 'index.html', 'src/index.jsx']);
+        assert.file(['package.json', '.babelrc', 'index.html', 'src/index.jsx', '.gitignore']);
         assert.jsonFileContent('package.json', {"name": "foo"});
         assert.noFileContent('src/index.jsx', '../css/app.scss');
         assert.noFileContent('src/index.jsx', '<Router>');
