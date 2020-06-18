@@ -36,6 +36,9 @@ module.exports = class extends Generator {
                 },
                 {
                     name: 'Redux'
+                },
+                {
+                    name: 'Jest'
                 }
             ]
         }])
@@ -45,6 +48,7 @@ module.exports = class extends Generator {
             
             this.reactRouter = false;
             this.nodeSass = false;
+            this.jest = false;
 
             if (answers.extras) {
                 answers.extras.forEach(el => {
@@ -56,27 +60,36 @@ module.exports = class extends Generator {
                         this.typescript = true;
                     else if (el === 'Redux')
                         this.redux = true;
+                    else if (el === 'Jest')
+                        this.jest = true;
                 });
             }
         });
     }
 
     install() {
+        let typescriptPackages = [];
         this.npmInstall(['react', 'react-dom']);
+
         //TODO refactor to a better (prettier) way
         if (this.reactRouter) {
+            typescriptPackages.push('@types/react-router-dom');
             this.npmInstall(['react-router-dom']);
         }
         if (this.nodeSass) {
-            this.npmInstall(['node-sass'], { 'dev': true });
+            this.npmInstall(['node-sass'], { 'save-dev': true });
+        }
+        if (this.jest) {
+            typescriptPackages.push(...['@types/jest', 'ts-jest']);
+            this.npmInstall(['jest', '@testing-library/react', '@testing-library/jest-dom'], { 'save-dev': true });
         }
         if (this.typescript) {
-            //this.npmInstall(['@types/react','@types/react-dom'], { 'dev': true });
+            this.npmInstall(['typescript', '@types/react','@types/react-dom', '@babel/preset-typescript', ...typescriptPackages], { 'save-dev': true });
         }
         if (this.redux) {
             this.npmInstall(['redux', 'react-redux', 'redux-thunk']);
         }
-        this.npmInstall(['parcel-bundler', 'babel-preset-env', 'babel-preset-react', 'babel-plugin-transform-object-rest-spread'], { 'dev': true });
+        this.npmInstall(['parcel-bundler', '@babel/preset-env', '@babel/preset-react', '@babel/plugin-proposal-object-rest-spread'], { 'save-dev': true });
     }
 
     writing() {
@@ -129,9 +142,29 @@ module.exports = class extends Generator {
                 {}
             );
 
+        if (this.jest) {
+            const testPkgJson = {
+                scripts: {
+                    test: 'jest',
+                    "test:watch": "jest --watch"
+                }
+            };
+            this.fs.extendJSON(this.destinationPath('package.json'), testPkgJson);
+
+            this.fs.copyTpl(
+                this.templatePath('index.test.tsx'),
+                this.destinationPath('src/index.test.tsx')
+            );
+
+            this.fs.copyTpl(
+                this.templatePath('jest.config.js'),
+                this.destinationPath('jest.config.js')
+            );
+        }
+
         this.fs.write('.babelrc', '{\n'+
-            '    "plugins": ["transform-object-rest-spread"],\n'+
-            '    "presets": ["env", "react"]\n'+
+            '    "plugins": ["@babel/plugin-proposal-object-rest-spread"],\n'+
+            '    "presets": ["@babel/env", "@babel/react", "@babel/preset-typescript"]\n'+
             '}');
     }
 };
