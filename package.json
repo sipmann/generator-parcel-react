@@ -1,7 +1,7 @@
 {
   "name": "generator-parcel-react",
   "version": "1.4.0",
-  "description": "A simple react with parcel generator",
+  "description": "A simple react with parcel generator. Supports typescript, sass, redux, and more.",
   "main": "index.js",
   "author": {
     "name": "Maurício Camargo Sipmann",
